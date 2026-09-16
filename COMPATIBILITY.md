@@ -1,20 +1,22 @@
-# Compatibilité Claude Code
+# Claude Code compatibility
+
+[Lire en français](COMPATIBILITY.fr.md)
 
 ## Versions
 
-| Fonction | Version minimale documentée | Vérification V5 |
+| Feature | Minimum documented version | V5 check |
 |---|---:|---|
-| Chargement du plugin et du skill | version récente prise en charge | Claude Code 2.1.270 : PASS |
-| `claude plugin validate` | 2.1.233+ | Claude Code 2.1.270 : PASS |
-| `claude plugin eval` | 2.1.269+ | commande disponible ; appels modèle non exécutés |
+| Plugin and skill loading | recent supported version | Claude Code 2.1.270: PASS |
+| `claude plugin validate` | 2.1.233+ | Claude Code 2.1.270: PASS |
+| `claude plugin eval` | 2.1.269+ | command available; model calls not executed |
 
-## Dépendances locales
+## Local dependencies
 
-- Python 3 pour les validateurs et rapports déterministes ;
-- bibliothèque standard Python uniquement ;
-- aucun serveur MCP, secret ou fournisseur imposé ;
-- les agents utilisent uniquement les champs de frontmatter pris en charge pour un plugin.
+- Python 3 for validators and deterministic reports;
+- Python standard library only;
+- no imposed MCP server, secret, or provider;
+- agents use only the frontmatter fields supported for a plugin.
 
-## Politique de maintenance
+## Maintenance policy
 
-Avant une release, vérifier la documentation officielle Claude Code, exécuter `claude plugin validate`, la suite unitaire, `validate_evals.py` et `security_audit.py`. Toute incompatibilité observée doit être documentée avant modification des manifestes ou agents.
+Before a release, check the official Claude Code documentation, run `claude plugin validate`, the unit suite, `validate_evals.py`, and `security_audit.py`. Any observed incompatibility must be documented before manifests or agents are modified.

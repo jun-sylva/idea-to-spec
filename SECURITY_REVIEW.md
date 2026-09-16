@@ -1,31 +1,33 @@
-# Revue de sécurité — V5 finale
+# Security review — Final V5
 
-## Périmètre contrôlé
+[Lire en français](SECURITY_REVIEW.fr.md)
 
-- secrets et fichiers sensibles courants ;
-- liens symboliques et artefacts de build ;
-- champs non pris en charge dans les agents du plugin ;
-- limites d'autorisation MCP et actions externes ;
-- injection d'instructions par contenu web, importé ou MCP ;
-- baselines, archives, redlines, journaux et handoffs ;
-- séparation entre empreinte d'intégrité et signature d'identité.
-- traversées de chemin dans les manifestes de baseline et de handoff.
+## Scope checked
 
-## Résultat local
+- common secrets and sensitive files;
+- symbolic links and build artifacts;
+- unsupported fields in plugin agents;
+- MCP authorization boundaries and external actions;
+- instruction injection via web, imported, or MCP content;
+- baselines, archives, redlines, logs, and handoffs;
+- separation between integrity hash and identity signature;
+- path traversal in baseline and handoff manifests.
 
-- secrets détectés : 0 ;
-- fichiers sensibles détectés : 0 ;
-- liens symboliques : 0 ;
-- champs d'agent interdits : 0 ;
-- scénario adversarial d'injection MCP : présent, non exécuté par modèle ;
-- scénario d'affirmation juridique non sourcée : présent, non exécuté par modèle.
+## Local result
 
-## Limites
+- secrets detected: 0;
+- sensitive files detected: 0;
+- symbolic links: 0;
+- forbidden agent fields: 0;
+- adversarial MCP injection scenario: present, not executed by a model;
+- unsourced legal claim scenario: present, not executed by a model.
 
-L'audit local détecte des motifs connus et des invariants structurels. Il ne prouve pas l'absence de toute vulnérabilité et ne remplace pas l'évaluation comportementale ni une revue professionnelle des intégrations réellement installées.
+## Limitations
+
+The local audit detects known patterns and structural invariants. It does not prove the absence of every vulnerability and does not replace behavioral evaluation or a professional review of the integrations actually installed.
 
 ## Verdict
 
 `PASS_FOR_FINAL_PACKAGE`
 
-Le package final peut être distribué. La qualité comportementale mesurée reste non démontrée jusqu'au benchmark et à la revue humaine.
+The final package can be distributed. Measured behavioral quality remains unproven until the benchmark and human review are completed.

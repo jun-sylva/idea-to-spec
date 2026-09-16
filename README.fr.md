@@ -339,10 +339,10 @@ idea-to-spec/
 ├── evals/                       25 cas et configuration du benchmark
 ├── README.md                    Documentation anglaise
 ├── README.fr.md                 Documentation française
-├── INSTALLATION.md              Commandes détaillées
-├── SECURITY_REVIEW.md           Revue de sécurité
-├── BENCHMARK_REPORT.md          État de l’évaluation
-├── MIGRATION_V1_TO_V5.md        Guide de migration
+├── INSTALLATION.fr.md           Commandes détaillées
+├── SECURITY_REVIEW.fr.md        Revue de sécurité
+├── BENCHMARK_REPORT.fr.md       État de l’évaluation
+├── MIGRATION_V1_TO_V5.fr.md     Guide de migration
 ├── ROADMAP.md                   Historique et critères de maturité
 └── LICENSE                      Licence MIT
 ```
@@ -367,7 +367,7 @@ Invoquer le skill :
 
 Copier `skills/idea-to-spec/` vers `.claude/skills/idea-to-spec/` pour un projet ou `~/.claude/skills/idea-to-spec/` pour une découverte personnelle. Dans ce mode, les agents du plugin ne sont pas enregistrés ; le skill applique lui-même leurs protocoles en lecture seule lorsque possible.
 
-Consulter [INSTALLATION.md](INSTALLATION.md) pour les commandes de validation, d’évaluation et les outils.
+Consulter [INSTALLATION.fr.md](INSTALLATION.fr.md) pour les commandes de validation, d’évaluation et les outils.
 
 ## Exemple d’utilisation
 
@@ -397,7 +397,7 @@ Idea to Spec :
 - aucune prétendue signature lorsqu’il ne s’agit que d’une empreinte ;
 - revue humaine obligatoire pour les décisions à fort impact.
 
-Consulter [SECURITY_REVIEW.md](SECURITY_REVIEW.md) pour la revue de release et ses limites.
+Consulter [SECURITY_REVIEW.fr.md](SECURITY_REVIEW.fr.md) pour la revue de release et ses limites.
 
 ## Évaluation
 
@@ -405,7 +405,7 @@ Le package contient 25 cas d’évaluation Claude Code couvrant trois langues, t
 
 La campagne comparative complète prévoit 150 exécutions : 25 cas × deux variantes × trois répétitions. Elle nécessite de vrais appels modèle et n’a volontairement pas été exécutée sans autorisation budgétaire. Le package ne revendique donc aucune performance comportementale mesurée.
 
-Consulter [evals/BENCHMARK.md](evals/BENCHMARK.md) et [BENCHMARK_REPORT.md](BENCHMARK_REPORT.md).
+Consulter [evals/BENCHMARK.md](evals/BENCHMARK.md) et [BENCHMARK_REPORT.fr.md](BENCHMARK_REPORT.fr.md).
 
 ## Compatibilité et migration
 
@@ -413,9 +413,9 @@ Consulter [evals/BENCHMARK.md](evals/BENCHMARK.md) et [BENCHMARK_REPORT.md](BENC
 - Les évaluations du plugin nécessitent Claude Code `2.1.269` ou ultérieur.
 - Les outils locaux nécessitent Python 3 et utilisent uniquement la bibliothèque standard.
 
-Consulter [COMPATIBILITY.md](COMPATIBILITY.md), [MIGRATION_V1_TO_V5.md](MIGRATION_V1_TO_V5.md) et [ROADMAP.md](ROADMAP.md).
+Consulter [COMPATIBILITY.fr.md](COMPATIBILITY.fr.md), [MIGRATION_V1_TO_V5.fr.md](MIGRATION_V1_TO_V5.fr.md) et [ROADMAP.md](ROADMAP.md).
 
-Les changements complets sont détaillés dans [RELEASE_NOTES.md](RELEASE_NOTES.md).
+Les changements complets sont détaillés dans [RELEASE_NOTES.fr.md](RELEASE_NOTES.fr.md).
 
 ## Licence
 

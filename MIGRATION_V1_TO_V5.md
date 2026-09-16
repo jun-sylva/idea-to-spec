@@ -1,32 +1,34 @@
-# Migration V1 à V5
+# Migration V1 to V5
 
-Cette migration ajoute des contrôles sans invalider les documents historiques. Ne jamais fabriquer rétroactivement une approbation, une provenance, une baseline ou une réception.
+[Lire en français](MIGRATION_V1_TO_V5.fr.md)
 
-## Depuis V1
+This migration adds controls without invalidating historical documents. Never retroactively fabricate an approval, a provenance entry, a baseline, or a receipt.
 
-1. Conserver `MEMORY.md`, `PROJECT.md`, exigences, tâches, décisions, recherche, risques et changelog.
-2. Ajouter profil et type de projet V2, puis exécuter le validateur pour révéler les lacunes sans les corriger silencieusement.
-3. Ajouter la provenance structurée uniquement pour les sources retrouvables.
-4. Déclarer les intégrations et juridictions réellement applicables.
-5. Installer la gouvernance V4 avec rôles confirmés, RACI et règles de gate.
-6. Créer une baseline de migration de l'état actuel ; ne pas prétendre qu'elle existait à l'époque de l'approbation.
+## From V1
 
-## Depuis V2
+1. Keep `MEMORY.md`, `PROJECT.md`, requirements, tasks, decisions, research, risks, and the changelog.
+2. Add the V2 profile and project type, then run the validator to reveal gaps without silently fixing them.
+3. Add structured provenance only for retrievable sources.
+4. Declare only the integrations and jurisdictions that actually apply.
+5. Install V4 governance with confirmed roles, RACI, and gate rules.
+6. Create a migration baseline of the current state; do not claim it existed at the time of the original approval.
 
-Conserver profils, extensions, conflits et identifiants. Ajouter les artefacts V3 d'intégration ou de provenance seulement lorsqu'ils sont utilisés, puis appliquer la gouvernance V4.
+## From V2
 
-## Depuis V3
+Keep profiles, extensions, conflicts, and identifiers. Add V3 integration or provenance artifacts only when they are used, then apply V4 governance.
 
-Suivre `MIGRATION_V3_TO_V4.md`, puis adopter les politiques V5 de contenu non fiable, localisation et évaluation.
+## From V3
 
-## Depuis V4
+Follow `MIGRATION_V3_TO_V4.md`, then adopt the V5 policies for untrusted content, localization, and evaluation.
 
-Mettre à jour le plugin sans modifier les baselines de projet. Ajouter les politiques V5, les outils d'audit et la nouvelle suite d'évaluation. Les approbations V4 restent valides pour leur version et leur empreinte exactes.
+## From V4
 
-## Vérification
+Update the plugin without modifying project baselines. Add the V5 policies, audit tools, and the new evaluation suite. V4 approvals remain valid for their exact version and hash.
 
-Exécuter les tests locaux, le validateur de spécification, le validateur des évaluations, l'audit de sécurité et la validation native du plugin. Les projets `READY_FOR_IMPLEMENTATION` doivent continuer à satisfaire leurs gates V4.
+## Verification
 
-## Retour arrière
+Run the local tests, the specification validator, the evaluation validator, the security audit, and native plugin validation. Projects marked `READY_FOR_IMPLEMENTATION` must continue to satisfy their V4 gates.
 
-Conserver l'archive de la version précédente. Un retour au plugin antérieur ne doit jamais supprimer les artefacts V3/V4/V5 ; les anciennes versions peuvent les ignorer, mais ne doivent pas les réécrire.
+## Rollback
+
+Keep the archive of the previous version. Reverting to an earlier plugin must never delete V3/V4/V5 artifacts; older versions may ignore them, but must not rewrite them.

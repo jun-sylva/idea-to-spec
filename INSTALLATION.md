@@ -1,128 +1,130 @@
-# Installation et usage
+# Installation and usage
 
-> Idea to Spec `5.0.1` — SIELINOU GAMENI Sylvain Junior. Documentation complète : [français](README.fr.md) · [English](README.md).
+[Lire en français](INSTALLATION.fr.md)
 
-## Option recommandée — plugin local complet
+> Idea to Spec `5.0.1` — SIELINOU GAMENI Sylvain Junior. Full documentation: [English](README.md) · [français](README.fr.md).
 
-Cette option charge le skill et les dix-neuf agents spécialisés.
+## Recommended option — full local plugin
 
-1. Décompresser le dossier `idea-to-spec`.
-2. Pour un essai ponctuel, lancer Claude Code avec :
+This option loads the skill and the nineteen specialized agents.
+
+1. Unzip the `idea-to-spec` folder.
+2. For a one-off trial, launch Claude Code with:
 
    ```bash
-   claude --plugin-dir /chemin/absolu/vers/idea-to-spec
+   claude --plugin-dir /absolute/path/to/idea-to-spec
    ```
 
-3. Invoquer le skill avec :
+3. Invoke the skill with:
 
    ```text
-   /idea-to-spec:idea-to-spec Mon idée de projet…
+   /idea-to-spec:idea-to-spec My project idea…
    ```
 
-Pour le rendre disponible comme plugin de répertoire de skills personnel, placer le dossier complet dans `~/.claude/skills/idea-to-spec/`, puis démarrer une nouvelle session Claude Code. Le manifeste `.claude-plugin/plugin.json` permet à Claude Code de le charger comme `idea-to-spec@skills-dir` avec ses agents.
+To make it available as a personal skills-directory plugin, place the complete folder in `~/.claude/skills/idea-to-spec/`, then start a new Claude Code session. The `.claude-plugin/plugin.json` manifest lets Claude Code load it as `idea-to-spec@skills-dir` with its agents.
 
-Après une modification des agents ou du manifeste, exécuter `/reload-plugins` ou redémarrer Claude Code. Les changements de `SKILL.md` sont détectés directement dans les versions récentes.
+After modifying the agents or the manifest, run `/reload-plugins` or restart Claude Code. Changes to `SKILL.md` are detected directly in recent versions.
 
-## Option minimale — skill seul
+## Minimal option — skill only
 
-Copier `skills/idea-to-spec/` vers `.claude/skills/idea-to-spec/` dans un projet ou vers `~/.claude/skills/idea-to-spec/` pour tous les projets. Le workflow reste utilisable, mais les agents personnalisés du plugin ne seront pas enregistrés ; le skill appliquera alors leurs protocoles lui-même lorsque nécessaire.
+Copy `skills/idea-to-spec/` to `.claude/skills/idea-to-spec/` in a project, or to `~/.claude/skills/idea-to-spec/` for all projects. The workflow remains usable, but the plugin's custom agents will not be registered; the skill will then apply their protocols itself when needed.
 
-## Premier essai conseillé
+## Recommended first trial
 
 ```text
-/idea-to-spec:idea-to-spec Je veux créer une application qui aide [public] à [résultat].
+/idea-to-spec:idea-to-spec I want to build an app that helps [audience] achieve [outcome].
 ```
 
-Le skill doit lire une éventuelle mémoire, poser seulement les questions critiques, présenter le cadrage puis s'arrêter pour obtenir la validation intermédiaire. Il ne doit pas produire le cahier des charges complet dans le même tour sans cette validation.
+The skill should read any existing memory, ask only the critical questions, present the scope, and then stop to obtain intermediate approval. It must not produce the complete specification in the same turn without that approval.
 
-## Validation technique
+## Technical validation
 
-Avec Claude Code v2.1.233 ou ultérieur :
+With Claude Code v2.1.233 or later:
 
 ```bash
-claude plugin validate /chemin/absolu/vers/idea-to-spec
+claude plugin validate /absolute/path/to/idea-to-spec
 ```
 
-Le package n'inclut aucun serveur MCP ni secret. Il utilise les capacités web ou MCP uniquement si elles sont réellement disponibles dans la session.
+The package includes no MCP server or secret. It uses web or MCP capabilities only when they are actually available in the session.
 
-## Validateur V2 à V5
+## V2 to V5 validator
 
-Contrôler un dossier de spécification avant la validation finale :
+Check a specification folder before final validation:
 
 ```bash
-python3 /chemin/vers/idea-to-spec/skills/idea-to-spec/scripts/validate_spec.py /chemin/vers/le-projet
+python3 /path/to/idea-to-spec/skills/idea-to-spec/scripts/validate_spec.py /path/to/the-project
 ```
 
-Ajouter `--json` pour un rapport structuré ou `--strict` pour faire échouer la commande sur les avertissements.
+Add `--json` for a structured report or `--strict` to fail the command on warnings.
 
-## Évaluations V2 à V5
+## V2 to V5 evaluations
 
-Le dossier `evals/` suit le format officiel `claude plugin eval`. Son exécution requiert Claude Code v2.1.269 ou ultérieur et effectue de vrais appels modèle :
+The `evals/` folder follows the official `claude plugin eval` format. Running it requires Claude Code v2.1.269 or later and performs real model calls:
 
 ```bash
-cd /chemin/vers/idea-to-spec
+cd /path/to/idea-to-spec
 claude plugin eval . --no-publish --max-cost-usd 10
 ```
 
-Commencer éventuellement par un seul cas et une seule exécution pour limiter le coût. Ne pas considérer ce passage exploratoire comme une mesure stable.
+You may want to start with a single case and a single run to limit cost. Do not treat this exploratory pass as a stable measurement.
 
-## Validation V5 sans crédit
+## V5 validation without credits
 
-Ces commandes ne réalisent aucun appel modèle :
+These commands make no model calls:
 
 ```bash
-python3 /chemin/vers/scripts/validate_evals.py /chemin/vers/idea-to-spec/evals
-python3 /chemin/vers/scripts/security_audit.py /chemin/vers/idea-to-spec
-python3 -m unittest discover -s /chemin/vers/scripts/tests -p 'test_*.py'
+python3 /path/to/scripts/validate_evals.py /path/to/idea-to-spec/evals
+python3 /path/to/scripts/security_audit.py /path/to/idea-to-spec
+python3 -m unittest discover -s /path/to/scripts/tests -p 'test_*.py'
 ```
 
-La campagne complète est décrite dans `evals/BENCHMARK.md`. Avec 25 cas, deux variantes et trois répétitions, elle prévoit 150 exécutions. Afficher et faire approuver le plafond financier avant son lancement.
+The full campaign is described in `evals/BENCHMARK.md`. With 25 cases, two variants, and three repetitions, it plans for 150 runs. Display and get the cost cap approved before launching it.
 
-Après normalisation des résultats :
+After normalizing the results:
 
 ```bash
-python3 /chemin/vers/scripts/benchmark_report.py \
-  /chemin/vers/idea-to-spec/evals/BENCHMARK_MANIFEST.json \
-  /chemin/vers/resultats-normalises.json
+python3 /path/to/scripts/benchmark_report.py \
+  /path/to/idea-to-spec/evals/BENCHMARK_MANIFEST.json \
+  /path/to/normalized-results.json
 ```
 
-## Outils V3
+## V3 tools
 
-Détecter les écarts à partir d'un instantané externe normalisé :
+Detect drift from a normalized external snapshot:
 
 ```bash
-python3 /chemin/vers/idea-to-spec/skills/idea-to-spec/scripts/detect_drift.py \
-  /chemin/vers/le-projet /chemin/vers/snapshot.json --json
+python3 /path/to/idea-to-spec/skills/idea-to-spec/scripts/detect_drift.py \
+  /path/to/the-project /path/to/snapshot.json --json
 ```
 
-Explorer les impacts liés à une Change Request :
+Explore impacts related to a Change Request:
 
 ```bash
-python3 /chemin/vers/idea-to-spec/skills/idea-to-spec/scripts/analyze_impact.py \
-  /chemin/vers/le-projet --ids FR-001 TASK-01-A --json
+python3 /path/to/idea-to-spec/skills/idea-to-spec/scripts/analyze_impact.py \
+  /path/to/the-project --ids FR-001 TASK-01-A --json
 ```
 
-Ces scripts sont locaux et en lecture seule. Ils ne se connectent pas aux services externes et ne remplacent pas l'analyse de l'orchestrateur.
+These scripts are local and read-only. They do not connect to external services and do not replace the orchestrator's analysis.
 
-## Outils V4
+## V4 tools
 
-Créer une baseline après approbation, puis vérifier son intégrité :
+Create a baseline after approval, then verify its integrity:
 
 ```bash
-python3 /chemin/vers/scripts/baseline_manager.py create /chemin/du/projet \
-  --version 1.0.0 --project-name "Mon projet" \
+python3 /path/to/scripts/baseline_manager.py create /path/to/the-project \
+  --version 1.0.0 --project-name "My project" \
   --created-at 2026-09-13T12:00:00Z --approval APR-001 \
-  --output /chemin/du/projet/governance/baselines/BASELINE-1.0.0.json
-python3 /chemin/vers/scripts/baseline_manager.py verify /chemin/du/projet \
-  /chemin/du/projet/governance/baselines/BASELINE-1.0.0.json
+  --output /path/to/the-project/governance/baselines/BASELINE-1.0.0.json
+python3 /path/to/scripts/baseline_manager.py verify /path/to/the-project \
+  /path/to/the-project/governance/baselines/BASELINE-1.0.0.json
 ```
 
-Comparer deux versions, calculer les tableaux et dériver les métriques :
+Compare two versions, compute dashboards, and derive metrics:
 
 ```bash
-python3 /chemin/vers/scripts/compare_versions.py /archive/1.0.0 /archive/1.1.0
-python3 /chemin/vers/scripts/project_dashboard.py /chemin/du/projet
-python3 /chemin/vers/scripts/workflow_metrics.py /chemin/du/projet/governance/WORKFLOW_EVENTS.json
+python3 /path/to/scripts/compare_versions.py /archive/1.0.0 /archive/1.1.0
+python3 /path/to/scripts/project_dashboard.py /path/to/the-project
+python3 /path/to/scripts/workflow_metrics.py /path/to/the-project/governance/WORKFLOW_EVENTS.json
 ```
 
-La création de baseline écrit uniquement au chemin demandé et refuse d'écraser un manifeste existant. Les trois autres opérations sont en lecture seule.
+Baseline creation only writes to the requested path and refuses to overwrite an existing manifest. The other three operations are read-only.

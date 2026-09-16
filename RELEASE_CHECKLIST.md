@@ -1,24 +1,26 @@
-# Checklist de release finale V5
+# Final V5 release checklist
 
-## Structure et déterminisme
+[Lire en français](RELEASE_CHECKLIST.fr.md)
 
-- [x] Frontmatter du skill et des agents valide
-- [x] Manifestes et modèles JSON lisibles
-- [x] Tests unitaires locaux
-- [x] Validateur des 25 cas d'évaluation
-- [x] Audit local de sécurité
-- [x] Validation native du plugin après versionnage V5
-- [x] Intégrité et SHA-256 de l'archive V5
+## Structure and determinism
 
-## Comportement
+- [x] Skill and agent frontmatter valid
+- [x] JSON manifests and templates readable
+- [x] Local unit tests
+- [x] Validator for the 25 evaluation cases
+- [x] Local security audit
+- [x] Native plugin validation after V5 versioning
+- [x] V5 archive integrity and SHA-256
 
-- [ ] 150 exécutions prévues terminées
-- [ ] Matrice baseline/plugin complète
-- [ ] Seuils préenregistrés satisfaits
-- [ ] Aucun échec critique
-- [ ] Échecs revus et non-régressions ajoutées
-- [ ] Revue humaine finale
+## Behavior
 
-## Statut
+- [ ] 150 planned runs completed
+- [ ] Complete baseline/plugin matrix
+- [ ] Pre-registered thresholds satisfied
+- [ ] No critical failure
+- [ ] Failures reviewed and non-regressions added
+- [ ] Final human review
+
+## Status
 
 `FINAL_PACKAGE_RELEASED — BEHAVIORAL_BENCHMARK_DEFERRED`

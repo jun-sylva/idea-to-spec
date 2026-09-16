@@ -1,25 +1,27 @@
-# Rapport de benchmark — V5 finale
+# Benchmark report — Final V5
 
-- Statut : NOT_RUN
-- Motif : appels modèle reportés à la fin à la demande de l'utilisateur
-- Suite : `idea-to-spec-v5`
-- Cas : 25
-- Variantes : 2
-- Répétitions prévues : 3
-- Exécutions prévues : 150
-- Version Claude Code contrôlée localement : 2.1.270
-- Coût engagé : 0 USD
+[Lire en français](BENCHMARK_REPORT.fr.md)
 
-## Contrôles gratuits
+- Status: NOT_RUN
+- Reason: model calls deferred to the end at the user's request
+- Suite: `idea-to-spec-v5`
+- Cases: 25
+- Variants: 2
+- Planned repetitions: 3
+- Planned runs: 150
+- Claude Code version used for local validation: 2.1.270
+- Cost incurred: 0 USD
 
-- Tests unitaires : PASS
-- Structure des évaluations : PASS
-- Audit local de sécurité : PASS
-- Validation native du plugin : PASS
-- Intégrité de l'archive : PASS
+## Free checks
 
-## Gate comportemental
+- Unit tests: PASS
+- Evaluation structure: PASS
+- Local security audit: PASS
+- Native plugin validation: PASS
+- Archive integrity: PASS
+
+## Behavioral gate
 
 `DEFERRED — NO_MODEL_CREDITS_AUTHORIZED`
 
-Aucun taux de réussite ni gain par rapport à la baseline n'est affirmé avant l'exécution. Les seuils préenregistrés figurent dans `evals/BENCHMARK_MANIFEST.json`.
+No success rate or gain over baseline is claimed before execution. The pre-registered thresholds are listed in `evals/BENCHMARK_MANIFEST.json`.

@@ -1,26 +1,26 @@
-# Migration de V3 vers V4
+# Migration from V3 to V4
 
-La V4 conserve les documents V3 et ajoute une couche de gouvernance. Ne pas recréer ni réécrire une version déjà approuvée.
+V4 keeps V3 documents and adds a governance layer. Do not recreate or rewrite a version that has already been approved.
 
-## Projet en cours de cadrage ou de revue
+## Project currently in scoping or review
 
-1. Copier les nouveaux modèles dans les dossiers appropriés.
-2. Définir `governance/GOVERNANCE.md`, `RACI.md` et `APPROVAL_POLICY.json` avec l'utilisateur.
-3. Initialiser `APPROVAL_LEDGER.json` sans inventer d'approbation passée.
-4. Continuer le workflow puis créer la première baseline après approbation.
+1. Copy the new templates into the appropriate folders.
+2. Define `governance/GOVERNANCE.md`, `RACI.md`, and `APPROVAL_POLICY.json` with the user.
+3. Initialize `APPROVAL_LEDGER.json` without inventing a past approval.
+4. Continue the workflow, then create the first baseline after approval.
 
-## Projet déjà approuvé en V3
+## Project already approved in V3
 
-1. Conserver la version et son historique.
-2. Enregistrer les preuves d'approbation existantes uniquement si elles sont retrouvables et attribuables ; sinon les marquer comme héritées à confirmer.
-3. Créer une baseline initiale de migration, identifiée comme telle dans le changelog.
-4. Vérifier les empreintes et exécuter le validateur V4.
-5. Ne pas prétendre que la baseline était signée ou existait au moment de l'approbation V3.
+1. Keep the version and its history.
+2. Record existing approval evidence only if it is retrievable and attributable; otherwise mark it as legacy, to be confirmed.
+3. Create an initial migration baseline, identified as such in the changelog.
+4. Verify the hashes and run the V4 validator.
+5. Do not claim the baseline was signed or existed at the time of the V3 approval.
 
 ## Handoff
 
-Créer le paquet uniquement pour une version `READY_FOR_IMPLEMENTATION` avec baseline vérifiée. Une transmission déjà réalisée avant V4 reste historique ; ne pas fabriquer rétroactivement un accusé de réception.
+Create the package only for a `READY_FOR_IMPLEMENTATION` version with a verified baseline. A handoff already completed before V4 remains historical; do not retroactively fabricate an acknowledgment of receipt.
 
-## Compatibilité
+## Compatibility
 
-Les fichiers V3 de recherche, provenance, juridiction, import et synchronisation restent inchangés. Les intégrations externes continuent d'exiger une prévisualisation et une autorisation au moment de l'écriture.
+V3 research, provenance, jurisdiction, import, and synchronization files remain unchanged. External integrations still require a preview and authorization at write time.

@@ -1,126 +1,128 @@
-# Notes de version
+# Release notes
+
+[Lire en français](RELEASE_NOTES.fr.md)
 
 ## 5.0.1 — 2026-09-14
 
 ### Documentation
 
-- ajout dans les README français et anglais d'un diagramme de l'architecture orchestrateur–experts ;
-- ajout d'un diagramme du cycle de validation, changement, baseline et handoff ;
-- ajout d'un diagramme de traçabilité entre objectifs, preuves, décisions, exigences, risques, tâches et tests ;
-- ajout d'explications associées pour rendre le fonctionnement du plugin plus facile à comprendre.
+- added an orchestrator–experts architecture diagram to the French and English READMEs;
+- added a diagram of the approval, change, baseline, and handoff lifecycle;
+- added a traceability diagram linking objectives, evidence, decisions, requirements, risks, tasks, and tests;
+- added related explanations to make the plugin's behavior easier to understand.
 
 ## 5.0.0 — 2026-09-13
 
-### Finalisé
+### Finalized
 
-- publication du package final V5 ;
-- ajout d'un README anglais complet et d'un README français complet ;
-- attribution du plugin et de la licence à SIELINOU GAMENI Sylvain Junior ;
-- harmonisation des métadonnées et de la documentation de distribution ;
-- conservation intégrale des politiques, 19 agents, modèles, schémas, outils et 25 cas d'évaluation de la release candidate.
+- published the final V5 package;
+- added a complete English README and a complete French README;
+- attributed the plugin and license to SIELINOU GAMENI Sylvain Junior;
+- harmonized distribution metadata and documentation;
+- fully retained the policies, 19 agents, templates, schemas, tools, and 25 evaluation cases from the release candidate.
 
 ### Validation
 
-- tous les contrôles locaux gratuits sont exécutés avant empaquetage ;
-- le benchmark comportemental payant reste explicitement différé et aucune performance mesurée n'est revendiquée.
+- all free local checks run before packaging;
+- the paid behavioral benchmark remains explicitly deferred and no measured performance is claimed.
 
 ## 5.0.0-rc.1 — 2026-09-13
 
-### Ajouté
+### Added
 
-- politiques de test reproductible, localisation et durcissement des contenus non fiables ;
-- manifeste de benchmark préenregistré avec seuils de release ;
-- format normalisé et agrégateur de résultats baseline/plugin ;
-- validateur local du format des évaluations ;
-- audit local des secrets, fichiers sensibles, liens symboliques et champs d'agents ;
-- dix scénarios supplémentaires, portant la suite à 25 cas en français, anglais et espagnol ;
-- cas adversariaux d'injection MCP et d'affirmation juridique non sourcée ;
-- documentation de migration V1 à V5, compatibilité, sécurité et checklist de release.
+- reproducible testing, localization, and untrusted-content hardening policies;
+- pre-registered benchmark manifest with release thresholds;
+- normalized format and baseline/plugin results aggregator;
+- local evaluation format validator;
+- local audit of secrets, sensitive files, symbolic links, and agent fields;
+- ten additional scenarios, bringing the suite to 25 cases in French, English, and Spanish;
+- adversarial cases for MCP injection and unsourced legal claims;
+- migration documentation from V1 to V5, compatibility, security, and release checklist.
 
-### Corrigé
+### Fixed
 
-- ajout du frontmatter officiel manquant aux huit graders introduits en V4 ;
-- test de non-régression empêchant désormais la distribution d'un grader sans métadonnées valides.
-- rejet des chemins absolus, traversées et liens symboliques dans les manifestes de baseline et de handoff.
+- added the official frontmatter that was missing from the eight graders introduced in V4;
+- non-regression test that now prevents distributing a grader without valid metadata;
+- rejection of absolute paths, traversals, and symbolic links in baseline and handoff manifests.
 
-### Statut
+### Status
 
-- contrôles gratuits exécutés ;
-- aucun appel modèle ni crédit consommé ;
-- release candidate maintenue jusqu'au benchmark comportemental et à la revue humaine finale.
+- free checks executed;
+- no model call or credit consumed;
+- release candidate maintained until the behavioral benchmark and final human review.
 
 ## 4.0.0 — 2026-09-13
 
-### Ajouté
+### Added
 
-- gouvernance configurable avec rôles, RACI, gates, quorum et journal d'approbations attribuables ;
-- baselines SHA-256 vérifiables et références optionnelles de signature externe ;
-- politiques d'archivage, de rétention et de redline ;
-- tableaux dérivés de couverture et de risque ;
-- paquet de handoff avec gate et accusé de réception ;
-- journal d'événements append-only et métriques de cycle de vie ;
-- outils locaux de baseline, comparaison de versions, tableaux et métriques ;
-- agents `governance-reviewer` et `handoff-reviewer` ;
-- quatre cas d'évaluation V4, portant le total à quinze.
+- configurable governance with roles, RACI, gates, quorum, and an attributable approval ledger;
+- verifiable SHA-256 baselines and optional external signature references;
+- archiving, retention, and redline policies;
+- derived coverage and risk dashboards;
+- handoff package with gate and acknowledgment of receipt;
+- append-only event log and lifecycle metrics;
+- local tools for baseline management, version comparison, dashboards, and metrics;
+- `governance-reviewer` and `handoff-reviewer` agents;
+- four V4 evaluation cases, bringing the total to fifteen.
 
-### Garanties
+### Guarantees
 
-- aucune identité, approbation ou signature n'est inventée ;
-- une empreinte d'intégrité n'est jamais assimilée à une signature ;
-- une modification de baseline ou une réception absente bloque le gate ;
-- les évaluations par modèle restent différées jusqu'à disponibilité de crédits.
+- no identity, approval, or signature is invented;
+- an integrity hash is never treated as a signature;
+- a modified baseline or a missing receipt blocks the gate;
+- model-based evaluations remain deferred until credits are available.
 
 ## 3.0.0 — 2026-09-13
 
-### Ajouté
+### Added
 
-- workflow MCP en deux gates : plan approuvé, puis exécution vérifiée ;
-- adaptateurs conceptuels GitHub Issues, Jira, Linear et Notion ;
-- plans et journaux de synchronisation JSON ;
-- import avec cartographie et préservation de provenance ;
-- provenance machine-readable et schémas JSON ;
-- détection déterministe des divergences ;
-- analyse d'impact transitive des Change Requests ;
-- orchestration de recherche sous budget et conditions d'arrêt ;
-- gestion multi-juridictions ;
-- agents `integration-planner`, `change-impact-analyst` et `jurisdiction-coordinator` ;
-- quatre cas d'évaluation V3, portant le total à onze.
+- two-gate MCP workflow: approved plan, then verified execution;
+- conceptual adapters for GitHub Issues, Jira, Linear, and Notion;
+- JSON synchronization plans and logs;
+- import with mapping and provenance preservation;
+- machine-readable provenance and JSON schemas;
+- deterministic drift detection;
+- transitive impact analysis for Change Requests;
+- research orchestration under budget and stop conditions;
+- multi-jurisdiction management;
+- `integration-planner`, `change-impact-analyst`, and `jurisdiction-coordinator` agents;
+- four V3 evaluation cases, bringing the total to eleven.
 
-### Sécurité
+### Security
 
-- aucune intégration ou configuration MCP fictive n'est fournie ;
-- les contenus MCP sont traités comme non fiables ;
-- les suppressions restent séparées et explicitement autorisées ;
-- toute écriture est relue et enregistrée sans secret.
+- no fictitious MCP integration or configuration is provided;
+- MCP content is treated as untrusted;
+- deletions remain separate and explicitly authorized;
+- every write is reviewed and logged without a secret.
 
 ### Validation
 
-- onze tests locaux couvrent le validateur, la divergence et l'analyse d'impact ;
-- les évaluations par modèle restent différées jusqu'à disponibilité de crédits.
+- eleven local tests cover the validator, drift, and impact analysis;
+- model-based evaluations remain deferred until credits are available.
 
 ## 2.0.0 — 2026-09-13
 
-### Ajouté
+### Added
 
-- profils `lean`, `standard` et `regulated` avec sélection validée ;
-- extensions pour software, service, internal process et hybrid product ;
-- agents `data-ai-expert` et `accessibility-expert` ;
-- protocole et modèle de registre des conflits entre agents ;
-- validateur de spécification sans dépendance externe ;
-- cinq tests automatisés du validateur ;
-- sept cas d'évaluation au format officiel Claude Code Plugin Evals.
+- `lean`, `standard`, and `regulated` profiles with validated selection;
+- extensions for software, service, internal process, and hybrid product;
+- `data-ai-expert` and `accessibility-expert` agents;
+- protocol and template for the agent conflict register;
+- specification validator with no external dependency;
+- five automated validator tests;
+- seven evaluation cases in the official Claude Code Plugin Evals format.
 
-### Modifié
+### Changed
 
-- routage des agents adapté au profil ;
-- mémoire, projet et cahier des charges enrichis avec profil et type ;
-- contrôle déterministe demandé avant validation finale lorsque Python 3 est disponible ;
-- documentation d'installation et sources actualisées.
+- agent routing adapted to the profile;
+- memory, project, and specification enriched with profile and type;
+- deterministic check requested before final validation when Python 3 is available;
+- installation and sources documentation updated.
 
-### Limite connue
+### Known limitation
 
-La suite comportementale n'a pas été exécutée dans l'environnement de création : Claude Code 2.1.153 y est installé, alors que `claude plugin eval` exige 2.1.269 ou ultérieur et réalise des appels modèle réels.
+The behavioral suite was not run in the creation environment: Claude Code 2.1.153 is installed there, while `claude plugin eval` requires 2.1.269 or later and performs real model calls.
 
 ## 1.0.0 — 2026-09-13
 
-- Première version du workflow Idea to Spec, de ses douze agents, politiques et huit modèles canoniques.
+- First version of the Idea to Spec workflow, its twelve agents, policies, and eight canonical templates.
