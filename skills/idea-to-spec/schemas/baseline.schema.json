@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://idea-to-spec.local/schemas/baseline.schema.json",
+  "title": "Idea to Spec baseline",
+  "$defs": {"file": {"type": "object", "required": ["path", "sha256", "size"], "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "size": {"type": "integer", "minimum": 0}}, "additionalProperties": false}},
+  "type": "object",
+  "required": ["schema_version", "baseline_id", "project", "version", "created_at", "status", "approval_refs", "signature_status", "files"],
+  "properties": {
+    "schema_version": {"const": "1.0"}, "baseline_id": {"type": "string", "pattern": "^BASELINE-[0-9]+\\.[0-9]+\\.[0-9]+$"}, "project": {"type": "string", "minLength": 1}, "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"}, "created_at": {"type": "string", "format": "date-time"}, "status": {"enum": ["PENDING", "BASELINED", "MISMATCH", "SUPERSEDED"]}, "approval_refs": {"type": "array", "items": {"type": "string", "pattern": "^APR-[A-Za-z0-9.-]+$"}, "uniqueItems": true}, "signature_status": {"enum": ["NOT_SIGNED", "EXTERNALLY_SIGNED"]}, "signature_ref": {"type": ["string", "null"]}, "files": {"type": "array", "items": {"$ref": "#/$defs/file"}}
+  },
+  "additionalProperties": false
+}

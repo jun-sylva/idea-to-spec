@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "plan_id": "SYNC-PLAN-001",
+  "created_at": "[AAAA-MM-JJThh:mm:ssZ]",
+  "source_version": "[x.y.z]",
+  "target": {
+    "system": "[github|jira|linear|notion|other]",
+    "workspace": "[cible exacte]"
+  },
+  "status": "PENDING_USER_APPROVAL",
+  "snapshot_checked_at": "[AAAA-MM-JJThh:mm:ssZ]",
+  "operations": [
+    {
+      "operation_id": "SYNC-OP-001",
+      "action": "CREATE",
+      "canonical_id": "TASK-01.01.01-A",
+      "external_id": null,
+      "title": "[Titre prévisualisé]",
+      "content_hash": "[sha256]",
+      "destructive": false,
+      "reason": "[Pourquoi cette opération]"
+    }
+  ],
+  "summary": {
+    "create": 1,
+    "update": 0,
+    "no_op": 0,
+    "conflict": 0,
+    "delete_or_archive": 0
+  },
+  "approved_by": null,
+  "approved_at": null
+}

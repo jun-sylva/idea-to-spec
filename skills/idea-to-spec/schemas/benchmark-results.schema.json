@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://idea-to-spec.local/schemas/benchmark-results.schema.json",
+  "type": "object",
+  "required": ["schema_version", "suite", "run", "results"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "suite": {"type": "string"},
+    "run": {"type": "object"},
+    "results": {"type": "array", "items": {"type": "object", "required": ["case_id", "variant", "repetition", "passed", "critical_failure", "scores"], "properties": {"case_id": {"type": "string"}, "variant": {"enum": ["baseline", "plugin"]}, "repetition": {"type": "integer", "minimum": 1}, "passed": {"type": "boolean"}, "critical_failure": {"type": "boolean"}, "scores": {"type": "object", "additionalProperties": {"type": "number", "minimum": 0, "maximum": 1}}, "cost_usd": {"type": "number", "minimum": 0}, "notes": {"type": "string"}}, "additionalProperties": false}}
+  },
+  "additionalProperties": false
+}

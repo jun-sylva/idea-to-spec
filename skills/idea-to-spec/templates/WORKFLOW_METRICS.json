@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "project": "[Nom du projet]",
+  "period": {"from": null, "to": null},
+  "event_count": 0,
+  "pending_approvals": [],
+  "cycle_times_hours": {},
+  "change_requests": {},
+  "scope_change": {"requirements_added": 0, "requirements_removed": 0},
+  "spec_debt": {"opened": 0, "resolved": 0, "currently_open": 0, "open_ids": []},
+  "data_quality_notes": []
+}

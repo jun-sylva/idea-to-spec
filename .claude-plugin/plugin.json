@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "idea-to-spec",
+  "displayName": "Idea to Spec",
+  "version": "5.0.1",
+  "description": "Transforme une idée ou un projet existant en spécification gouvernée, sourcée, traçable et transmissible, avec contrôles de sécurité et évaluation reproductible.",
+  "author": {
+    "name": "SIELINOU GAMENI Sylvain Junior"
+  },
+  "license": "MIT",
+  "keywords": [
+    "product-discovery",
+    "requirements",
+    "specification",
+    "project-planning"
+  ]
+}

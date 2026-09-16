@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "handoff_id": "HANDOFF-001",
+  "project": "[Nom du projet]",
+  "version": "1.0.0",
+  "baseline_id": "BASELINE-1.0.0",
+  "created_at": "[ISO 8601]",
+  "status": "DRAFT",
+  "recipient_role": "[Rôle]",
+  "files": [],
+  "open_non_blocking_items": [],
+  "receipt": null
+}

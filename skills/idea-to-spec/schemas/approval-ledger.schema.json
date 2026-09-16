@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://idea-to-spec.local/schemas/approval-ledger.schema.json",
+  "title": "Idea to Spec approval ledger",
+  "type": "object",
+  "required": ["schema_version", "project", "entries"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "project": {"type": "string", "minLength": 1},
+    "entries": {"type": "array", "items": {"type": "object", "required": ["approval_id", "gate_id", "subject", "version", "role", "actor", "decision", "decided_at", "evidence_ref"], "properties": {
+      "approval_id": {"type": "string", "pattern": "^APR-[A-Za-z0-9.-]+$"}, "gate_id": {"type": "string", "pattern": "^GATE-[A-Za-z0-9.-]+$"}, "subject": {"type": "string"}, "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"}, "baseline_id": {"type": ["string", "null"]}, "role": {"type": "string", "minLength": 1}, "actor": {"type": "string", "minLength": 1}, "decision": {"enum": ["PENDING", "APPROVED", "REJECTED", "CHANGES_REQUESTED", "EXPIRED", "REVOKED"]}, "decided_at": {"type": ["string", "null"], "format": "date-time"}, "evidence_ref": {"type": ["string", "null"]}, "supersedes": {"type": ["string", "null"]}
+    }, "additionalProperties": false}}
+  },
+  "additionalProperties": false
+}

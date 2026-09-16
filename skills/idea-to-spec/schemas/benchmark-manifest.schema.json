@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://idea-to-spec.local/schemas/benchmark-manifest.schema.json",
+  "type": "object",
+  "required": ["schema_version", "suite", "variants", "repetitions", "dimensions", "thresholds", "cases"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "suite": {"type": "string", "minLength": 1},
+    "variants": {"type": "array", "const": ["baseline", "plugin"]},
+    "repetitions": {"type": "integer", "minimum": 1},
+    "dimensions": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "thresholds": {"type": "object"},
+    "cases": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["id", "language", "sector", "profile", "complexity", "critical"], "properties": {"id": {"type": "string"}, "language": {"type": "string"}, "sector": {"type": "string"}, "profile": {"enum": ["lean", "standard", "regulated"]}, "complexity": {"enum": ["small", "medium", "large"]}, "critical": {"type": "boolean"}}, "additionalProperties": false}}
+  },
+  "additionalProperties": false
+}

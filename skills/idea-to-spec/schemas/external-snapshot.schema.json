@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://idea-to-spec.local/schemas/external-snapshot.schema.json",
+  "title": "Normalized external work-item snapshot",
+  "type": "object",
+  "required": ["schema_version", "system", "workspace", "observed_at", "items"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "system": { "type": "string", "minLength": 1 },
+    "workspace": { "type": "string", "minLength": 1 },
+    "observed_at": { "type": "string", "minLength": 1 },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["external_id", "canonical_id", "title", "state"],
+        "properties": {
+          "external_id": { "type": "string", "minLength": 1 },
+          "canonical_id": { "type": ["string", "null"] },
+          "title": { "type": "string" },
+          "state": { "type": "string" },
+          "content_hash": { "type": ["string", "null"] },
+          "source_version": { "type": ["string", "null"] }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

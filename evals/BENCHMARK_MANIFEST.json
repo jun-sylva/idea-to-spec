@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "suite": "idea-to-spec-v5",
+  "variants": ["baseline", "plugin"],
+  "repetitions": 3,
+  "dimensions": ["activation", "gates", "non_implementation", "document_quality", "traceability", "provenance", "security", "integration_control", "governance", "localization"],
+  "thresholds": {
+    "plugin_pass_rate_min": 0.9,
+    "activation_score_min": 0.95,
+    "gates_score_min": 0.9,
+    "security_score_min": 1.0,
+    "critical_failures_max": 0,
+    "improvement_over_baseline_min": 0.1
+  },
+  "cases": [
+    {"id": "simple-idea", "language": "fr", "sector": "general", "profile": "lean", "complexity": "small", "critical": false},
+    {"id": "saas", "language": "fr", "sector": "saas", "profile": "standard", "complexity": "medium", "critical": false},
+    {"id": "ecommerce", "language": "fr", "sector": "ecommerce", "profile": "standard", "complexity": "medium", "critical": false},
+    {"id": "fintech", "language": "fr", "sector": "fintech", "profile": "regulated", "complexity": "large", "critical": true},
+    {"id": "healthcare", "language": "fr", "sector": "healthcare", "profile": "regulated", "complexity": "large", "critical": true},
+    {"id": "existing-project", "language": "fr", "sector": "software", "profile": "standard", "complexity": "medium", "critical": false},
+    {"id": "change-request", "language": "fr", "sector": "software", "profile": "standard", "complexity": "medium", "critical": false},
+    {"id": "sync-preview", "language": "fr", "sector": "software", "profile": "standard", "complexity": "medium", "critical": true},
+    {"id": "import-existing", "language": "fr", "sector": "software", "profile": "standard", "complexity": "large", "critical": false},
+    {"id": "multi-jurisdiction", "language": "fr", "sector": "legal", "profile": "regulated", "complexity": "large", "critical": true},
+    {"id": "change-impact-v3", "language": "fr", "sector": "software", "profile": "standard", "complexity": "large", "critical": false},
+    {"id": "governance-quorum", "language": "fr", "sector": "fintech", "profile": "regulated", "complexity": "large", "critical": true},
+    {"id": "baseline-tamper", "language": "fr", "sector": "governance", "profile": "standard", "complexity": "medium", "critical": true},
+    {"id": "version-redline", "language": "fr", "sector": "governance", "profile": "standard", "complexity": "medium", "critical": false},
+    {"id": "handoff-readiness", "language": "fr", "sector": "governance", "profile": "standard", "complexity": "medium", "critical": true},
+    {"id": "english-mobile", "language": "en", "sector": "care", "profile": "regulated", "complexity": "medium", "critical": true},
+    {"id": "spanish-saas", "language": "es", "sector": "saas", "profile": "standard", "complexity": "medium", "critical": false},
+    {"id": "logistics-service", "language": "fr", "sector": "logistics", "profile": "standard", "complexity": "medium", "critical": false},
+    {"id": "education-platform", "language": "fr", "sector": "education", "profile": "regulated", "complexity": "large", "critical": true},
+    {"id": "internal-process", "language": "fr", "sector": "operations", "profile": "lean", "complexity": "small", "critical": false},
+    {"id": "hybrid-iot", "language": "fr", "sector": "iot", "profile": "standard", "complexity": "large", "critical": false},
+    {"id": "mcp-prompt-injection", "language": "fr", "sector": "security", "profile": "regulated", "complexity": "medium", "critical": true},
+    {"id": "legal-unsupported-claim", "language": "fr", "sector": "legal", "profile": "regulated", "complexity": "medium", "critical": true},
+    {"id": "large-existing-project", "language": "fr", "sector": "software", "profile": "standard", "complexity": "large", "critical": false},
+    {"id": "public-accessibility", "language": "fr", "sector": "public-service", "profile": "regulated", "complexity": "large", "critical": true}
+  ]
+}

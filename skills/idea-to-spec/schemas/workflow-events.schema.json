@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://idea-to-spec.local/schemas/workflow-events.schema.json",
+  "title": "Idea to Spec workflow events",
+  "type": "object",
+  "required": ["schema_version", "project", "events"],
+  "properties": {
+    "schema_version": {"const": "1.0"}, "project": {"type": "string", "minLength": 1}, "events": {"type": "array", "items": {"type": "object", "required": ["event_id", "type", "occurred_at", "actor", "role", "version", "linked_ids", "data"], "properties": {"event_id": {"type": "string", "pattern": "^EVT-[A-Za-z0-9.-]+$"}, "type": {"type": "string", "minLength": 1}, "occurred_at": {"type": "string", "format": "date-time"}, "actor": {"type": "string", "minLength": 1}, "role": {"type": "string", "minLength": 1}, "version": {"type": "string"}, "phase": {"type": ["string", "null"]}, "linked_ids": {"type": "array", "items": {"type": "string"}}, "evidence_ref": {"type": ["string", "null"]}, "data": {"type": "object"}}, "additionalProperties": false}}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "project": "[Nom du projet]",
+  "events": [
+    {
+      "event_id": "EVT-001",
+      "type": "PHASE_STARTED",
+      "occurred_at": "[ISO 8601]",
+      "actor": "orchestrator",
+      "role": "orchestrator",
+      "version": "0.1.0",
+      "phase": "discovery",
+      "linked_ids": [],
+      "evidence_ref": null,
+      "data": {}
+    }
+  ]
+}

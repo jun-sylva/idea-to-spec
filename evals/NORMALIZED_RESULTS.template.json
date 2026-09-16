@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "suite": "idea-to-spec-v5",
+  "run": {
+    "claude_code_version": "[version]",
+    "model": "[model]",
+    "started_at": "[ISO 8601]",
+    "completed_at": "[ISO 8601]",
+    "max_cost_usd": 0,
+    "actual_cost_usd": 0
+  },
+  "results": []
+}

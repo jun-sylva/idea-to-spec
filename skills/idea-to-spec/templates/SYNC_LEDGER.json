@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "target": {
+    "system": "[github|jira|linear|notion|other]",
+    "workspace": "[cible exacte]"
+  },
+  "runs": [
+    {
+      "run_id": "SYNC-RUN-001",
+      "plan_id": "SYNC-PLAN-001",
+      "started_at": "[AAAA-MM-JJThh:mm:ssZ]",
+      "completed_at": "[AAAA-MM-JJThh:mm:ssZ]",
+      "source_version": "[x.y.z]",
+      "approved_by": "[Utilisateur]",
+      "result": "SUCCESS",
+      "operations": [
+        {
+          "operation_id": "SYNC-OP-001",
+          "canonical_id": "TASK-01.01.01-A",
+          "external_id": "[Identifiant externe]",
+          "action": "CREATE",
+          "result": "VERIFIED",
+          "error": null
+        }
+      ]
+    }
+  ]
+}

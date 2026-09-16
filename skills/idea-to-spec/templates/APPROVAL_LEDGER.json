@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "project": "[Nom du projet]",
+  "entries": [
+    {
+      "approval_id": "APR-001",
+      "gate_id": "GATE-01",
+      "subject": "Cadrage",
+      "version": "0.1.0",
+      "baseline_id": null,
+      "role": "user-approver",
+      "actor": "[Identité fournie par l'utilisateur]",
+      "decision": "PENDING",
+      "decided_at": null,
+      "evidence_ref": null,
+      "supersedes": null
+    }
+  ]
+}

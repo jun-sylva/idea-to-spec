@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "baseline_id": "BASELINE-1.0.0",
+  "project": "[Nom du projet]",
+  "version": "1.0.0",
+  "created_at": "[ISO 8601]",
+  "status": "PENDING",
+  "approval_refs": [],
+  "signature_status": "NOT_SIGNED",
+  "signature_ref": null,
+  "files": []
+}

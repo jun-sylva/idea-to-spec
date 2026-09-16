@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://idea-to-spec.local/schemas/handoff-manifest.schema.json",
+  "title": "Idea to Spec handoff manifest",
+  "type": "object",
+  "required": ["schema_version", "handoff_id", "project", "version", "baseline_id", "created_at", "status", "recipient_role", "files", "open_non_blocking_items", "receipt"],
+  "properties": {
+    "schema_version": {"const": "1.0"}, "handoff_id": {"type": "string", "pattern": "^HANDOFF-[A-Za-z0-9.-]+$"}, "project": {"type": "string", "minLength": 1}, "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"}, "baseline_id": {"type": "string", "pattern": "^BASELINE-[0-9]+\\.[0-9]+\\.[0-9]+$"}, "created_at": {"type": "string", "format": "date-time"}, "status": {"enum": ["DRAFT", "HANDOFF_READY", "PENDING_RECEIPT", "ACCEPTED", "CHANGES_REQUESTED", "REJECTED"]}, "recipient_role": {"type": "string", "minLength": 1}, "files": {"type": "array", "items": {"type": "object", "required": ["path", "sha256", "size"], "properties": {"path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "size": {"type": "integer", "minimum": 0}}, "additionalProperties": false}}, "open_non_blocking_items": {"type": "array", "items": {"type": "string"}}, "receipt": {"type": ["object", "null"]}
+  },
+  "additionalProperties": false
+}

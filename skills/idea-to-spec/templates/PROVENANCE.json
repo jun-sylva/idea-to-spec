@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "project": "[Nom du projet]",
+  "updated_at": "[AAAA-MM-JJThh:mm:ssZ]",
+  "entries": [
+    {
+      "id": "EVID-001",
+      "claim": "[Affirmation paraphrasée]",
+      "source_statement": "[Ce que la source permet d'établir]",
+      "inference": null,
+      "source_type": "official",
+      "source_uri": "[URL ou identifiant de ressource]",
+      "publisher": "[Organisme]",
+      "published_at": null,
+      "checked_at": "[AAAA-MM-JJ]",
+      "jurisdiction": null,
+      "evidence_level": "A",
+      "confidence": "HIGH",
+      "status": "active",
+      "linked_ids": ["FR-001"]
+    }
+  ]
+}

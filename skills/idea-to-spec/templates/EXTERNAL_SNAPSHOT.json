@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "system": "[github|jira|linear|notion|other]",
+  "workspace": "[cible exacte]",
+  "observed_at": "[AAAA-MM-JJThh:mm:ssZ]",
+  "items": [
+    {
+      "external_id": "[Identifiant externe]",
+      "canonical_id": "TASK-01.01.01-A",
+      "title": "[Titre externe observé]",
+      "state": "[État externe]",
+      "content_hash": null,
+      "source_version": "[x.y.z]"
+    }
+  ]
+}

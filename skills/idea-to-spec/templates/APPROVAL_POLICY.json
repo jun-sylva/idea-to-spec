@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "project": "[Nom du projet]",
+  "gates": [
+    {
+      "gate_id": "GATE-01",
+      "purpose": "SCOPE",
+      "version": "0.1.0",
+      "required_roles": ["user-approver"],
+      "rule": "SINGLE",
+      "quorum": 1,
+      "status": "ACTIVE"
+    },
+    {
+      "gate_id": "GATE-02",
+      "purpose": "FINAL_SPEC",
+      "version": "1.0.0",
+      "required_roles": ["user-approver"],
+      "rule": "SINGLE",
+      "quorum": 1,
+      "status": "ACTIVE"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+Documentation officielle consultée pour Idea to Spec V1
+Date de consultation : 2026-09-13
+
+Claude Code Skills
+https://code.claude.com/docs/fr/skills
+
+Claude Code Subagents
+https://code.claude.com/docs/fr/sub-agents
+
+Claude Code Plugins Reference
+https://code.claude.com/docs/fr/plugins-reference
+
+Claude Code Plugin Evals
+https://code.claude.com/docs/fr/plugin-evals
+
+Claude Code MCP
+https://code.claude.com/docs/fr/mcp
+
+Agent Skills open standard
+https://agentskills.io
+
+Source locale fournie dans le projet de création, conservée en lecture seule :
+sources/Documentation Officielle Claude Code Skills.txt
